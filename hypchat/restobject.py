@@ -169,7 +169,7 @@ class Room(RestObject):
         'topic': text,
         })
 
-    def history(self, date='recent', maxResults=200):
+    def history(self, end_date, date='recent', maxResults=200):
         """
         Requests the room history.
 
@@ -179,6 +179,7 @@ class Room(RestObject):
         if date != 'recent':
             date, tz = mktimestamp(date)
         params = {
+        'end-date': end_date,
         'date': date,
         'timezone': tz,
         'max-results': maxResults,
