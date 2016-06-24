@@ -169,7 +169,7 @@ class Room(RestObject):
         'topic': text,
         })
 
-    def history(self, end_date, date='recent', maxResults=200):
+    def history(self, end_date=None, date='recent', maxResults=200):
         """
         Requests the room history.
 
